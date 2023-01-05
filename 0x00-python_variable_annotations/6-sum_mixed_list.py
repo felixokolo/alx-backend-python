@@ -5,6 +5,7 @@ from typing import List
 Sum of a list
 """
 
+
 def sum_mixed_list(mxd_lst: List[int, float]) -> float:
     """
     Sums all elements in a li  st

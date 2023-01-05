@@ -4,6 +4,7 @@
 Floor of a float function
 """
 
+
 def floor(num: float) -> int:
     """
     Finds floor of a float

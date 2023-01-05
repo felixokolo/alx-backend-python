@@ -4,14 +4,15 @@
 Float to string conversion function
 """
 
+
 def to_str(num: float) -> str:
-        """
-        Converts float to string
+    """
+    Converts float to string
 
-        Parameters:
-                num (float): num to convert to string
+    Parameters:
+            num (float): num to convert to string
 
-        Returns:
-                string equivalent of num
-        """
-        return str(num)
+    Returns:
+            string equivalent of num
+    """
+    return str(num)
