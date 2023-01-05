@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-from typing import Iterable, List, Tuple
+from typing import Iterable, List, Tuple, Sequence
 
 """
 multiplier function
 """
 
 
-def element_length(lst: Iterable) -> List[Tuple[Iterable, int]]:
+def element_length(lst: Iterable[Sequence]) -> List[Tuple[Sequence, int]]:
     """
     generates list of tuples
 
@@ -16,3 +16,5 @@ def element_length(lst: Iterable) -> List[Tuple[Iterable, int]]:
         list of tuples
     """
     return [(i, len(i)) for i in lst]
+
+print(element_length.__annotations__)
