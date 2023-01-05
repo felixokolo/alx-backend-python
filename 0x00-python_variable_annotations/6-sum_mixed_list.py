@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-from typing import List
+from typing import List, Union
 
 """
 Sum of a list
 """
 
 
-def sum_mixed_list(mxd_lst: List[int, float]) -> float:
+def sum_mixed_list(mxd_lst: List[Union[int, float]]) -> float:
     """
     Sums all elements in a li  st
 
