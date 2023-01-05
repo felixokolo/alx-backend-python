@@ -7,10 +7,10 @@ string iint/float to tuple
 
 
 def to_kv(k: str,
-          v: List[Union[int,
-                        float]]) -> Tuple[Union[str,
-                                                Union[int,
-                                                      float]]]:
+          v: Union[int,
+                   float]) -> Tuple[str,
+                                    Union[int,
+                                          float]]:
     """
     To tuple
 
@@ -20,4 +20,4 @@ def to_kv(k: str,
     Returns:
         tuple (k, v)
     """
-    return (k, v)
+    return (k, v ** 2)
