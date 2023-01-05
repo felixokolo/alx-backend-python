@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
-from typing import List, Union, Tuple
-
 """
 string iint/float to tuple
 """
+from typing import List, Union, Tuple
 
 
 def to_kv(k: str,
