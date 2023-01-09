@@ -8,7 +8,7 @@ Basics of async
 """
 
 
-async def wait_random(max_delay: int = 10):
+async def wait_random(max_delay: int = 10) -> float:
     """
     Waits a random number of seconds
 
