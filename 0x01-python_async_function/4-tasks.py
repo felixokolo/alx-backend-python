@@ -16,16 +16,12 @@ async def task_wait_n(n: int, max_delay: int) -> List[float]:
         max_delay (int): maximum delay time in secs
 
     Returns:
-        wait_time
+        wait_time[asyncio
+                                  .create_task(wait_random(max_delay))] * n
     """
 
-    ret = await asyncio.gather(*([asyncio
-                                  .create_task(wait_random(max_delay))] * n)
+    task_wait_random = asyncio.create_task(wait_random(max_delay))
+    ret = await asyncio.gather(*([task_wait_random]) * n
                                )
 
     return sorted(ret)
-
-
-n = 5
-max_delay = 6
-print(asyncio.run(task_wait_n(n, max_delay)))
