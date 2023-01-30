@@ -4,7 +4,7 @@
 """
 import unittest
 from typing import Mapping, Sequence, Any, Dict
-from utils import access_nested_map, get_json
+from utils import access_nested_map, get_json, memoize
 from parameterized import parameterized
 from unittest.mock import patch, MagicMock
 
@@ -56,3 +56,32 @@ class TestGetJson(unittest.TestCase):
         mock.json.return_value = expected_result
         mock_requests.get.return_value = mock
         self.assertEqual(get_json(test_url), expected_result)
+
+
+class TestMemoize(unittest.TestCase):
+    """
+    Teat Memoize class
+    """
+
+    def test_memoize(self):
+        class TestClass:
+            """
+            Memoize class
+            """
+
+            def a_method(self):
+                """
+                Test memoize method
+                """
+                return 42
+
+            @memoize
+            def a_property(self):
+                """Property"""
+                return self.a_method()
+
+        with patch.object(TestClass, "a_method") as mockMethod:
+            test_class = TestClass()
+            test_class.a_property
+            test_class.a_property
+            mockMethod.assert_called_once
